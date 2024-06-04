@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="final_logo - Copy.png">
+    <title>ROBOT GRASS CUTTING</title>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+       <!-- leaflet css  -->
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+       crossorigin=""/>
+       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+       crossorigin=""></script>
+       <style>
+           body {
+               margin: 0;
+               padding: 0;
+           }
+           #map {
+               width: 100%;
+               height: 500px;
+           }
+       </style>
+</head>
+
+<body>
+    <div class="all">
+        <h1>
+        <div class="top">
+          <div class="logo"> <img width="330" height="70" src="LOGO_SPKT.png"></div>
+           <div class="menu">
+            <ul>
+                <li><a href="#">GIỚI THIỆU</a></li>
+                <li><a href="#SOLUTION">HƯỚNG DẪN</a></li>
+                <li><a href="#PRODUCTS">SẢN PHẨM</a></li>
+                <li><a href="#end">THÔNG TIN</a></li>
+             </ul>
+           </div>
+           <div class="search-box">
+            <input type="text" class="search-txt" name="" placeholder="Search....." >
+            <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+           </div>
+        </div>
+        </h1>
+
+        <div class="slideall">
+        <div class="slider">
+            <div class="slide active"><img src="slide0.jpg" alt=""> </div>
+            <div class="slide"><img src="slide1.jpg" alt=""> </div>
+            <div class="slide"><img src="slide2.jpg" alt=""> </div>
+            <div class="slide"><img src="slide3.jpg" alt=""> </div>
+            <div class="slide"> <img src="robot3.jpg" alt=""> </div> 
+            <div class="navigation">
+              <i class="fas fa-chevron-left prev-btn"></i>
+              <i class="fas fa-chevron-right next-btn"></i>
+            </div>
+            <div class="navigation-visibility">
+              <div class="slide-icon active"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+              <div class="slide-icon"></div>
+      
+            </div>
+          </div>
+          <script type="text/javascript">
+              const slider = document.querySelector(".slider");
+              const nextBtn = document.querySelector(".next-btn");
+              const prevBtn = document.querySelector(".prev-btn");
+              const slides = document.querySelectorAll(".slide");
+              const slideIcons = document.querySelectorAll(".slide-icon");
+              const numberOfSlides = slides.length;
+              var slideNumber = 0;
+          
+              //image slider next button
+              nextBtn.addEventListener("click", () => {
+                slides.forEach((slide) => {
+                  slide.classList.remove("active");
+                });
+                slideIcons.forEach((slideIcon) => {
+                  slideIcon.classList.remove("active");
+                });
+          
+                slideNumber++;
+          
+                if(slideNumber > (numberOfSlides - 1)){
+                  slideNumber = 0;
+                }
+          
+                slides[slideNumber].classList.add("active");
+                slideIcons[slideNumber].classList.add("active");
+              });
+          
+              //image slider previous button
+              prevBtn.addEventListener("click", () => {
+                slides.forEach((slide) => {
+                  slide.classList.remove("active");
+                });
+                slideIcons.forEach((slideIcon) => {
+                  slideIcon.classList.remove("active");
+                });
+          
+                slideNumber--;
+          
+                if(slideNumber < 0){
+                  slideNumber = numberOfSlides - 1;
+                }
+          
+                slides[slideNumber].classList.add("active");
+                slideIcons[slideNumber].classList.add("active");
+              });
+          
+              //image slider autoplay
+              var playSlider;
+          
+              var repeater = () => {
+                playSlider = setInterval(function(){
+                  slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                  });
+                  slideIcons.forEach((slideIcon) => {
+                    slideIcon.classList.remove("active");
+                  });
+          
+                  slideNumber++;
+          
+                  if(slideNumber > (numberOfSlides - 1)){
+                    slideNumber = 0;
+                  }
+          
+                  slides[slideNumber].classList.add("active");
+                  slideIcons[slideNumber].classList.add("active");
+                }, 4000);
+              }
+              repeater();
+          
+              //stop the image slider autoplay on mouseover
+              slider.addEventListener("mouseover", () => {
+                clearInterval(playSlider);
+              });
+          
+              //start the image slider autoplay again on mouseout
+              slider.addEventListener("mouseout", () => {
+                repeater();
+              });
+              </script>                   
+        </div>  
+        </div>
+        <div class="title"> 
+            <h2>Giới Thiệu</h2>  <div class="line">   </div>
+            <div class="infor">
+            <p><b>🌿🤖 Giới Thiệu Sản Phẩm 🌞🌱</b></p>
+            <div> 
+                Robot Cắt Cỏ Thông Minh: 
+                Trên hành trình chăm sóc sân vườn của bạn, không còn gì tuyệt vời hơn khi có một đối tác đáng tin cậy, hiện đại và
+                thân thiện với môi trường. Hãy chào đón Robot Cắt Cỏ Sử Dụng Năng Lượng Mặt Trời - người bạn đồng hành hoàn hảo cho mọi người yêu thích không gian xanh!</div>
+           <img class="hinh1" src="robot3.jpg">
+            </div>
+            <div class="infor1"> 
+                <p><b>TÍNH NĂNG NỔI BẬT</b></p>
+                <div>
+                <li>Năng Lượng Mặt Trời: Với các tấm pin mặt trời tích hợp, robot tự sạc năng lượng suốt cả ngày, giúp bạn tiết kiệm chi phí năng lượng và làm sạch môi trường.</li>
+                    <li> Định Vị GPS: Robot được trang bị công nghệ định vị GPS, giúp xác định vị trí trên sân vườn và tạo ra lộ trình cắt cỏ hiệu quả.</li>
+                    <li>Tự Động Cắt Cỏ: Với độ chính xác và linh hoạt, robot tự động di chuyển và cắt cỏ một cách đều đặn, giúp duy trì sân vườn luôn xanh mướt mà không cần sự can thiệp của bạn.</li>
+                    <li> Thu Thập Dữ Liệu Thời Tiết: Giúp robot thu thập thông tin về môi trường xung quanh, giúp bạn điều chỉnh lịch trình cắt cỏ và quản lý sân vườn một cách thông minh.</li>
+                </div>
+             <img class="hinh2" src="robot4.jpg">       
+            </div>
+            <div id="SOLUTION">  <h3 >HƯỚNG DẪN</h3> </div> <div class="line">   </div>  
+            <div class = "HUONGDAN">
+              <p><b>Hướng Dẫn Sử Dụng Robot Cắt Cỏ Thông Minh</b></p>
+              <p><b>1. Khởi Động và Bật Nguồn:</b> 
+                Khi khởi động robot lần đầu tiên, nguồn sẽ được bật cho cả robot và bộ điều khiển.</p>
+                <li>Robot hiển thị Led xanh 🟦: trạng thái không hoạt động.</li>
+               <p><b>2. Lựa Chọn Chế Độ Hoạt Động:</b>
+                Bộ điều khiển cho phép bạn lựa chọn giữa ba chế độ: tự động, điều khiển từ xa, và sạc.</p>
+                <li>Bắt đầu lựa chọn chế độ hoạt động bằng nút nhấn màu đỏ để (🔴OK) hiển thị menu lựa chọn trên màn hình LCD. </li>
+                <li>Xem thông tin và lựa chọn từ màn hình LCD thông qua các nút nhấn (⚪quay lại) (🔵lên) (🟢xuống) (🔴OK)</li>
+                <li>Chế độ điều khiển: sau khi lựa chọn chế độ điều khiển thành công Robot hiển thị Led xanh lá 🟩, thực hiện điều khiển Robot thông qua núm điều khiển.</li>
+                <li><a>Chế độ tự động: sau khi lựa chọn chế độ điều khiển thành công Robot hiển thị Led vàng 🟨. Trong chế độ tự động, robot sẽ tự động điều hướng để cắt cỏ và thu thập dữ liệu thời tiết trong khu vực làm việc.</a></li>
+                  <li><a>Chế độ sạc: Ở chế độ sạc, robot sẽ chuyển về trạng thái sạc pin. Led máu hiệu màu đỏ 🟥.</a></li>
+                  <li>⚠️CHÚ Ý⚠️</li>
+                  <b>Khi sử dụng chế độ sạc điện phải đảm bảo đã tắt công tắt của Robot trước khi cắm jack sạc.</b>
+                    <li><a>Hoạt động Vào ban đêm:  Nếu robot hoạt động vào ban đêm, nó sẽ tự động bật đèn và tiếp tục hoạt động khi ở bất kỳ trạng thái nào.</a></li>
+                  <p><b>3. Giám sát các thông tin trong quá trình hoạt động: </b> giám sát các thông tin thông qua website của hệ thống với những thông tin quan trọng như: thời tiết, dung lượng pin, nhiệt độ pin và vị trí robot đang hoạt động.
+                    Đảm bảo bạn có kết nối internet để theo dõi các thông tin này một cách chính xác và kịp thời.</p>
+                          <li><a>Với các hướng dẫn trên, bạn có thể dễ dàng khởi động và vận hành robot cắt cỏ thông minh. Chúc bạn có trải nghiệm tốt với thiết bị này!</a></li>
+                      </div> 
+
+            <div id="PRODUCTS" class="PRODUCTS"><h4>SẢN PHẨM</h4> <div class="line">   </div>
+            </div>
+            <h12>Thời tiết</h12> 
+                <div class="room1-1">
+                <div class="imgroom1">
+                    <img src="nhietdo.png" alt="" width="80px" height="70px">  </div>
+                <h6>Nhiệt Độ: <span id="nhietdo1">00</span>°C / <span id="nhietdo2">00</span>°F </h6>       
+                <div class="imgroom1">
+                    <img src="doam.png" alt="" width="70px" height="70px">
+                </div>       
+                <h11> Độ Ẩm: <span id="doam1">00</span>%</h11>
+                <div class="imgroom1">
+                    <img src="luongmua.png" alt="" width="80px" height="60px">
+                </div> 
+                <h9> Lượng mưa: <span id="Rain">00</span>%</h9>
+                <div class="imgroom1">
+                  <img src="light.png" alt="" width="80px" height="60px">
+              </div> 
+              <h9> Ánh sáng: <span id="Light">00</span>%</h9>
+                <div class="sensor">
+                   <div class="imgroom1">
+                    <img src="pin1.png" alt="" width="70px" height="40px">
+                    </div>  
+                   <h10> Dung lượng Pin: <span id="DungluongPIN"" >00</span>%</h10>
+                    <div class="imgroom1">
+                        <img src="temp_pin.png" alt="" width="50px" height="70px">
+                    </div>  
+                    <h10> Nhiệt độ Pin: <span id="nhietdoPIN" >00</span>°C </h10>
+                </div>
+               </div>
+            <div class = "Map"> 
+              <h12>Định vị GPS</h12> 
+              <h12> <span id="TIME" ></span></h12>
+              <div id="mapToggle">
+                <input type="checkbox" id="toggleSatellite">
+                <label for="toggleSatellite">Vệ tinh</label>
+              <div id="map"></div>
+              </div>
+            </div>
+
+            <div class="lh"><b>THÔNG TIN LIÊN HỆ</b></div> <div class="line " >  </div>    
+            <div id="end" class="end"> <h7><img src="end.webp" alt="" width="100%" height="450px"></h7>
+            <div class="diachi">
+                <p><b>TẬP ĐOÀN CÔNG NGHỆ ROBOT START.</b></p>
+                <li><a>Điện thoại: (+84)382 490 691, Email: lythanhtrung2508@gmail.com</a></li>
+                <li><a>Địa chỉ: số 1, Võ Văn Ngân, TP Thủ Đức</a></li>
+            </div>
+            <div class="container1">
+                <div class="contact-box">
+                    <div class="right">
+                        <h8><b>Contact Us</b></h8>
+                        <input type="text" class="field" placeholder="Your Name">
+                        <input type="text" class="field" placeholder="Your Email">
+                        <input type="text" class="field" placeholder="Phone">
+                        <textarea placeholder="Message" class="field"></textarea>
+                        <button class="btn">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="MXH">
+                <div class="icon"> 
+                    <a href="#" title="Follow on Github" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.facebook.com/ddminh0104" title="Follow on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/thh.trungg/" title="Follow on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCs7ohcBWM2ASMj5ChZNFFKQ" title="Follow on Youtube"><i class="fa-brands fa-youtube"></i></a></div>
+            </div>
+            <div class="profile1">
+                    <div class="container7">
+                        <div class="mycard">
+                            <div class="cimg">
+                                <img src="sang.png" alt="" width="130px" height="130px">
+                            </div>
+                            <div class="cdetail">
+                                <h5>Lê Trọng Sang</h5>
+                                <li>MSSV: 19161157</li>
+                                <li>Đại học Sư Phạm Kỹ Thuật TP.HCM</li>
+                            </div>
+                        </div>
+                        <div class="mycard">
+                            <div class="cimg">
+                                <img src="hinhtoi.jpg" alt="" width="130px" height="130px">
+                            </div>
+                            <div class="cdetail">
+                                <h5>Lý Thành Trung</h5>
+                                <li>MSSV: 20161276.</li>
+                                <li>Đại học Sư Phạm Kỹ Thuật TP.HCM</li>
+                            </div>
+                        </div>
+                </div>   
+            </div> 
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src= "index.js"></script>
+ </body>
+</html>
