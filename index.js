@@ -56,7 +56,7 @@ database.ref("GPS_TIME").on("value",function(snapshot){
 const locationRef = database.ref();
 
 // Initialize the map
-const map = L.map('map').setView([21.0278, 105.8342], 5);
+const map = L.map('map').setView([21.0278, 105.8342], 20);
 
 // Add initial tile layer to the map
 let tileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
@@ -66,6 +66,7 @@ let tileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
 
 // Create a reference to OpenStreetMap tile layer
 const osmTileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 20,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
