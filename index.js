@@ -56,7 +56,7 @@ database.ref("GPS_TIME").on("value",function(snapshot){
 const locationRef = database.ref();
 
 // Initialize the map
-const map = L.map('map').setView([21.0278, 105.8342], 20);
+const map = L.map('map').setView([21.0278, 105.8342], 5);
 
 // Add initial tile layer to the map
 let tileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
